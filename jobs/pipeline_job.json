@@ -1,0 +1,25 @@
+{
+  "name": "DistribuicaoPipeline",
+  "tasks": [
+    {
+      "task_key": "ingestao",
+      "notebook_task": {
+        "notebook_path": "/Repos/Silas-Siderio/databricks-pipeline-distribuicao/notebooks/01_ingestao_autoloader.py"
+      }
+    },
+    {
+      "task_key": "tratamento",
+      "depends_on": [{"task_key": "ingestao"}],
+      "notebook_task": {
+        "notebook_path": "/Repos/Silas-Siderio/databricks-pipeline-distribuicao/notebooks/02_tratamento_silver.py"
+      }
+    },
+    {
+      "task_key": "gold",
+      "depends_on": [{"task_key": "tratamento"}],
+      "notebook_task": {
+        "notebook_path": "/Repos/Silas-Siderio/databricks-pipeline-distribuicao/notebooks/03_aggregacoes_gold.py"
+      }
+    }
+  ]
+}
