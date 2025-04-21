@@ -9,7 +9,7 @@ Este projeto realiza a ingestão, tratamento e agregações dos dados de distrib
 3. Agregações por UF e tipo de equipamento (camada Gold)
 4. Orquestração com Databricks Workflows
 
-## Como usar
+## Estudo sobre a distribuição dos Respiradores mecânicos no Brasil
 
 1. Suba os dados no bucket S3: `/mnt/raw/distribuicao`
 2. Execute os notebooks na ordem 01 → 02 → 03
